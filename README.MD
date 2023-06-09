@@ -10,24 +10,24 @@
 
 $pip install a-selenium-kill
 
-from a_selenium_kill import add_kill_selenium
-from auto_download_undetected_chromedriver import download_undetected_chromedriver
 import undetected_chromedriver as uc
+from a_selenium_kill import add_kill_selenium
 
-# You have to create the instance in a function, and use the decorator @add_kill_selenium
+
 @add_kill_selenium
 def get_driver():
-    folderchromedriver = "f:\\seleniumdriver2"
-    path = download_undetected_chromedriver(folder_path_for_exe=folderchromedriver, undetected=True)
-    driver = uc.Chrome(driver_executable_path=path)
-    return driver
+    return uc.Chrome()
+    #return driver
+
 
 if __name__ == "__main__":
     driver = get_driver()
+    driver2 = get_driver()
+    driver3 = get_driver()
+
 	
 	#Kill Chrome:
-	
-	driver.die_die_die_selenium()
+	# driver.die_die_die_selenium()
 ```
 
 
